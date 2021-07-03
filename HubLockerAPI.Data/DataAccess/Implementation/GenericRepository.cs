@@ -29,19 +29,6 @@ namespace HubLockerAPI.Data.DataAccess.Implementation
             return result;
         }
 
-        public async Task<ICollection<TEntity>> GetPaginated(int page, int per_page, IQueryable<TEntity> items)
-        {
-            TotalNumberOfItems = await items.CountAsync();
-
-            TotalNumberOfPages = (int)Math.Ceiling(TotalNumberOfItems / (double)per_page);
-
-            if (page > TotalNumberOfPages || page < 1)
-            {
-                return null;
-            }
-            var pagedItems = await items.Skip((page - 1) * per_page).Take(per_page).ToListAsync();
-            return pagedItems;
-        }
 
         public async Task<bool> Add(TEntity model)
         {

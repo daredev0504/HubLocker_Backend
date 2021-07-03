@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HubLockerAPI.Helper.RequestFeatures;
 using HubLockerAPI.Models.Entities;
 
 namespace HubLockerAPI.Data.DataAccess.Interfaces
 {
     public interface ILockerRepo : IGenericRepository<Locker>
     {
-        Task<ICollection<Locker>> GetLockersByPageNumber(int pageNumber, int per_page);
+        Task<PagedList<Locker>> GetLockersAsync(Guid companyId, LockerParameters parameters);
     }
 }

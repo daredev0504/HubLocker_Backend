@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HubLockerAPI.Helper\HubLockerAPI.Helper.csproj" />
     <ProjectReference Include="..\HubLockerAPI.Models\HubLockerAPI.Models.csproj" />
   </ItemGroup>
 
