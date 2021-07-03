@@ -1,0 +1,71 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using HubLockerAPI.Data.Data;
+using HubLockerAPI.Data.DataAccess.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
+namespace HubLockerAPI.Data.DataAccess.Implementation
+{
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+    {
+        private readonly ApplicationDbContext _ctx;
+        private readonly DbSet<TEntity> _entities;
+        public int TotalNumberOfItems { get; set; }
+        public int TotalNumberOfPages { get; set; }
+
+        public GenericRepository(ApplicationDbContext ctx)
+        {
+            _ctx = ctx;
+            _entities = ctx.Set<TEntity>();
+        }
+        
+        public IQueryable<TEntity> GetAll()
+        {
+            var result = _entities.AsNoTracking();
+
+            return result;
+        }
+
+        public async Task<ICollection<TEntity>> GetPaginated(int page, int per_page, IQueryable<TEntity> items)
+        {
+            TotalNumberOfItems = await items.CountAsync();
+
+            TotalNumberOfPages = (int)Math.Ceiling(TotalNumberOfItems / (double)per_page);
+
+            if (page > TotalNumberOfPages || page < 1)
+            {
+                return null;
+            }
+            var pagedItems = await items.Skip((page - 1) * per_page).Take(per_page).ToListAsync();
+            return pagedItems;
+        }
+
+        public async Task<bool> Add(TEntity model)
+        {
+            _entities.Add(model);
+            return await _ctx.SaveChangesAsync() > 0;
+        }
+
+        public async Task<TEntity> GetById(object id)
+        {
+            return await _entities.FindAsync(id);
+        }
+
+        public async Task<bool> Modify(TEntity entity)
+        {
+            _entities.Update(entity);
+            return await _ctx.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> DeleteById(object id)
+        {
+            var result = await GetById(id);
+            _entities.Remove(result);
+            return await _ctx.SaveChangesAsync() > 0;
+        }
+
+    }
+}

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HubLockerAPI", "HubLockerAPI\HubLockerAPI.csproj", "{80FAA449-9531-49A3-83A6-4518CB54B080}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HubLockerAPI.Data", "HubLockerAPI.Data\HubLockerAPI.Data.csproj", "{36E24978-5E17-4858-BEC5-0352239BEC2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HubLockerAPI.Services", "HubLockerAPI.Services\HubLockerAPI.Services.csproj", "{C0F42884-7C84-4D12-8985-3BB6FEE5C4AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HubLockerAPI.Models", "HubLockerAPI.Models\HubLockerAPI.Models.csproj", "{458FB180-2E3F-42E2-9CD4-62F173CEB1E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80FAA449-9531-49A3-83A6-4518CB54B080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80FAA449-9531-49A3-83A6-4518CB54B080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80FAA449-9531-49A3-83A6-4518CB54B080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80FAA449-9531-49A3-83A6-4518CB54B080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36E24978-5E17-4858-BEC5-0352239BEC2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36E24978-5E17-4858-BEC5-0352239BEC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36E24978-5E17-4858-BEC5-0352239BEC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36E24978-5E17-4858-BEC5-0352239BEC2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0F42884-7C84-4D12-8985-3BB6FEE5C4AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F42884-7C84-4D12-8985-3BB6FEE5C4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F42884-7C84-4D12-8985-3BB6FEE5C4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F42884-7C84-4D12-8985-3BB6FEE5C4AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{458FB180-2E3F-42E2-9CD4-62F173CEB1E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458FB180-2E3F-42E2-9CD4-62F173CEB1E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458FB180-2E3F-42E2-9CD4-62F173CEB1E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458FB180-2E3F-42E2-9CD4-62F173CEB1E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79EAA29B-2D37-4D7D-BF79-6E82155F4F68}
+	EndGlobalSection
+EndGlobal
