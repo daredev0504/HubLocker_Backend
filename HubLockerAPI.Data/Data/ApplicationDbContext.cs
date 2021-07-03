@@ -12,7 +12,6 @@ namespace HubLockerAPI.Data.Data
 
         }
 
-        public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<Location>Locations { get; set; }
         public DbSet<Locker> Lockers { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

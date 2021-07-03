@@ -6,7 +6,15 @@
 
   <ItemGroup>
     <Folder Include="Implementation\" />
-    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.11.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HubLockerAPI.Models\HubLockerAPI.Models.csproj" />
   </ItemGroup>
 
 </Project>
