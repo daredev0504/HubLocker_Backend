@@ -6,6 +6,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using HubLockerAPI.Data.Data;
+using HubLockerAPI.Data.DataAccess.Implementation;
+using HubLockerAPI.Data.DataAccess.Interfaces;
 using HubLockerAPI.Models.Entities;
 using HubLockerAPI.Services.Implementation;
 using HubLockerAPI.Services.Interfaces;
@@ -53,7 +55,7 @@ namespace HubLockerAPI.Extensions
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Commander.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "HubLockerAPI", Version = "v1" });
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
@@ -87,6 +89,7 @@ namespace HubLockerAPI.Extensions
 
         }
         public static void ConfigureLockerService(this IServiceCollection services) => services.AddScoped<ILockerService, LockerService>();
+        public static void ConfigureLockerRepo(this IServiceCollection services) => services.AddScoped<ILockerRepo, LockerRepo>();
 
     }
 }

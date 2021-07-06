@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace HubLockerAPI.Controllers
 {
+    [Route("api/appusers")]
+    [ApiController]
     public class AppUserController : ControllerBase
     {
+        [HttpGet]
         public IActionResult Index()
         {
             return Ok();

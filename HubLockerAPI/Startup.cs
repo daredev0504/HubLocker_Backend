@@ -29,17 +29,13 @@ namespace HubLockerAPI
         {
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "HubLockerAPI", Version = "v1" });
-            });
-
             services.ConfigureSwagger();
             services.ConfigureIdentityPassword();
             services.ConfigureDbContext(Configuration);
             services.ConfigureCors();
             services.ConfigureAddIdentity();
             services.ConfigureLockerService();
+            services.ConfigureLockerRepo();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 

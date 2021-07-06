@@ -7,34 +7,59 @@ using System.Threading.Tasks;
 
 namespace HubLockerAPI.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    [Route("api/location")]
+    [ApiController]
     public class LocationController : ControllerBase
     {
-        // GET: LocationController
+
+        [HttpGet]
         public IActionResult GetLocations()
         {
             return Ok();
         }
 
-        // GET: LocationController/Details/5
+        [HttpGet]
+        [Route("{id}")]
         public IActionResult Details(int id)
         {
             return Ok();
         }
 
-        // GET: LocationController/Create
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
         public IActionResult Create()
         {
             return Ok();
         }
 
         
-        // GET: LocationController/Edit/5
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("{id}")]
         public ActionResult Edit(int id)
         {
             return Ok();
         }
 
-        // GET: LocationController/Delete/5
+      
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        [Route("{id}")]
         public IActionResult Delete(int id)
         {
             return Ok();

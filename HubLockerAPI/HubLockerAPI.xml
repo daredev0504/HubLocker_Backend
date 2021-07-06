@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HubLockerAPI</name>
+    </assembly>
+    <members>
+        <member name="T:HubLockerAPI.Controllers.LocationController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HubLockerAPI.Controllers.LocationController.Create">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HubLockerAPI.Controllers.LocationController.Edit(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HubLockerAPI.Controllers.LocationController.Delete(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HubLockerAPI.Controllers.LockerController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HubLockerAPI.Controllers.LockerController.GetLockers">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Commander.API.Profiles.MappingProfile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Commander.API.Profiles.MappingProfile.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>
