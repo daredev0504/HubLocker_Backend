@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using HubLockerAPI.Data.Data;
 using HubLockerAPI.Models.Entities;
+using HubLockerAPI.Services.Implementation;
+using HubLockerAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -84,6 +86,7 @@ namespace HubLockerAPI.Extensions
             });
 
         }
+        public static void ConfigureLockerService(this IServiceCollection services) => services.AddScoped<ILockerService, LockerService>();
 
     }
 }

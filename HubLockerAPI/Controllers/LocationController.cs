@@ -7,81 +7,39 @@ using System.Threading.Tasks;
 
 namespace HubLockerAPI.Controllers
 {
-    public class LocationController : Controller
+    public class LocationController : ControllerBase
     {
         // GET: LocationController
-        public IActionResult Index()
+        public IActionResult GetLocations()
         {
-            return View();
+            return Ok();
         }
 
         // GET: LocationController/Details/5
         public IActionResult Details(int id)
         {
-            return View();
+            return Ok();
         }
 
         // GET: LocationController/Create
         public IActionResult Create()
         {
-            return View();
+            return Ok();
         }
 
-        // POST: LocationController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
+        
         // GET: LocationController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
-        }
-
-        // POST: LocationController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return Ok();
         }
 
         // GET: LocationController/Delete/5
         public IActionResult Delete(int id)
         {
-            return View();
+            return Ok();
         }
 
-        // POST: LocationController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+      
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HubLockerAPI.Models.DTOs
 {
-    public class LockerEditDto
+    public class LockerUpdateDto
     {
         
     }

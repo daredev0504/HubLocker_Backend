@@ -16,6 +16,7 @@ namespace HubLockerAPI.Models.Entities
         [Required(ErrorMessage = "Locker name is a required field.")]
         [MaxLength(60, ErrorMessage = "Maximum length for the Name is 60 characters.")]
         public string Name { get; set; }
+        public string Size { get; set; }
 
 
         // Navigational Properties

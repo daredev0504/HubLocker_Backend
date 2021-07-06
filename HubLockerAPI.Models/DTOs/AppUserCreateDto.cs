@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace HubLockerAPI.Models.DTOs
 {
-    public class LockerReadDto
+    public class AppUserCreateDto
     {
-        public string Name { get; set; }
+        
     }
 }

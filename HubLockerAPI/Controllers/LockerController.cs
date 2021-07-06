@@ -7,81 +7,38 @@ using System.Threading.Tasks;
 
 namespace HubLockerAPI.Controllers
 {
-    public class LockerController : Controller
+    public class LockerController : ControllerBase
     {
-        // GET: LockerController
-        public ActionResult Index()
+        // GET: LocationController
+        public IActionResult GetLockers()
         {
-            return View();
+            return Ok();
         }
 
-        // GET: LockerController/Details/5
-        public ActionResult Details(int id)
+        // GET: LocationController/Details/5
+        public IActionResult Details(int id)
         {
-            return View();
+            return Ok();
         }
 
-        // GET: LockerController/Create
-        public ActionResult Create()
+        // GET: LocationController/Create
+        public IActionResult Create()
         {
-            return View();
+            return Ok();
         }
 
-        // POST: LockerController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: LockerController/Edit/5
+        
+        // GET: LocationController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return Ok();
         }
 
-        // POST: LockerController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        // GET: LocationController/Delete/5
+        public IActionResult Delete(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return Ok();
         }
 
-        // GET: LockerController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: LockerController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace HubLockerAPI.Controllers
 {
-    public class AppUserController : Controller
+    public class AppUserController : ControllerBase
     {
         public IActionResult Index()
         {
-            return View();
+            return Ok();
         }
     }
 }

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+	  
 	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.7" />
 	  <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.7" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.7">
@@ -18,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\HubLockerAPI.Data\HubLockerAPI.Data.csproj" />
     <ProjectReference Include="..\HubLockerAPI.Models\HubLockerAPI.Models.csproj" />
+    <ProjectReference Include="..\HubLockerAPI.Services\HubLockerAPI.Services.csproj" />
   </ItemGroup>
 
 </Project>
