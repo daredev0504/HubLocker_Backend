@@ -31,6 +31,12 @@ namespace Commander.API.Profiles
             CreateMap<Locker, LockerCreateDto>();
             CreateMap<LockerUpdateDto, Locker>();
 
+            //location
+            CreateMap<Location, LocationReadDto>();
+            CreateMap<LocationCreateDto, Location>();
+            CreateMap<Location, LocationCreateDto>();
+            CreateMap<LocationUpdateDto, Location>();
+
         }
     }
 }

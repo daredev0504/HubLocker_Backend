@@ -19,6 +19,7 @@ namespace HubLockerAPI.Models.Entities
         public string Size { get; set; }
 
 
+
         // Navigational Properties
         public Guid LocationId { get; set; }
         public Location Location { get; set; }

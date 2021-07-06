@@ -4,25 +4,55 @@
         <name>HubLockerAPI</name>
     </assembly>
     <members>
-        <member name="T:HubLockerAPI.Controllers.LocationController">
+        <member name="T:HubLockerAPI.Controllers.AppUserController">
             <summary>
             
             </summary>
         </member>
-        <member name="M:HubLockerAPI.Controllers.LocationController.Create">
+        <member name="M:HubLockerAPI.Controllers.AppUserController.Index">
             <summary>
             
             </summary>
             <returns></returns>
         </member>
-        <member name="M:HubLockerAPI.Controllers.LocationController.Edit(System.Int32)">
+        <member name="T:HubLockerAPI.Controllers.LocationController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HubLockerAPI.Controllers.LocationController.#ctor(HubLockerAPI.Services.Interfaces.ILocationService)">
+            <summary>
+            
+            </summary>
+            <param name="locationService"></param>
+        </member>
+        <member name="M:HubLockerAPI.Controllers.LocationController.GetLocations">
+            <summary>
+            Gets a list of all Locations
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HubLockerAPI.Controllers.LocationController.GetLocationById(System.Guid)">
+            <summary>
+            Gets a Location by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HubLockerAPI.Controllers.LocationController.CreateLocation(HubLockerAPI.Models.DTOs.LocationCreateDto)">
+            <summary>
+            Create a Location
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HubLockerAPI.Controllers.LocationController.UpdateLocation(System.Guid,HubLockerAPI.Models.DTOs.LocationUpdateDto)">
             <summary>
             
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:HubLockerAPI.Controllers.LocationController.Delete(System.Int32)">
+        <member name="M:HubLockerAPI.Controllers.LocationController.DeleteLocation(System.Guid)">
             <summary>
             
             </summary>
@@ -34,10 +64,47 @@
             
             </summary>
         </member>
-        <member name="M:HubLockerAPI.Controllers.LockerController.GetLockers">
+        <member name="M:HubLockerAPI.Controllers.LockerController.#ctor(HubLockerAPI.Services.Interfaces.ILockerService)">
             <summary>
             
             </summary>
+            <param name="lockerService"></param>
+        </member>
+        <member name="M:HubLockerAPI.Controllers.LockerController.GetPaginatedLockers(System.Guid,HubLockerAPI.Helper.RequestFeatures.LockerParameters)">
+            <summary>
+            gets paginated lockers by location
+            </summary>
+            <param name="locationId"></param>
+            <param name="lockerParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HubLockerAPI.Controllers.LockerController.GetLockerById(System.Guid)">
+            <summary>
+            Get a locker by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HubLockerAPI.Controllers.LockerController.CreateLocker(System.Guid,HubLockerAPI.Models.DTOs.LockerCreateDto)">
+            <summary>
+            
+            </summary>
+            <param name="locationId"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HubLockerAPI.Controllers.LockerController.EditLocker(System.Guid,HubLockerAPI.Models.DTOs.LockerUpdateDto)">
+            <summary>
+            Update a Locker
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HubLockerAPI.Controllers.LockerController.DeleteLocker(System.Guid)">
+            <summary>
+            Delete a Locker
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="T:Commander.API.Profiles.MappingProfile">

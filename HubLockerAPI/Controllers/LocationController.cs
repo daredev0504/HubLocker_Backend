@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HubLockerAPI.Models.DTOs;
+using HubLockerAPI.Services.Interfaces;
 
 namespace HubLockerAPI.Controllers
 {
@@ -14,28 +16,66 @@ namespace HubLockerAPI.Controllers
     [ApiController]
     public class LocationController : ControllerBase
     {
-
-        [HttpGet]
-        public IActionResult GetLocations()
-        {
-            return Ok();
-        }
-
-        [HttpGet]
-        [Route("{id}")]
-        public IActionResult Details(int id)
-        {
-            return Ok();
-        }
+        private readonly ILocationService _locationService;
 
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="locationService"></param>
+        public LocationController(ILocationService locationService)
+        {
+            _locationService = locationService;
+        }
+
+        /// <summary>
+        /// Gets a list of all Locations
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult GetLocations()
+        {
+            var result = _locationService.GetAllLocationsAsync();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest();
+        }
+        
+
+        /// <summary>
+        /// Gets a Location by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetLocationById(Guid id)
+        {
+            var result = await _locationService.RetrieveLocationById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest();
+        }
+
+        /// <summary>
+        /// Create a Location
+        /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult Create()
+        public async Task<IActionResult> CreateLocation(LocationCreateDto model)
         {
-            return Ok();
+            var result = await _locationService.AddLocation(model);
+            if (result.Success)
+            {
+                return CreatedAtRoute("GetLocationById", new {Id = result.Data.Id}, result.Data);
+            }
+
+            return BadRequest();
         }
 
         
@@ -47,9 +87,14 @@ namespace HubLockerAPI.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("{id}")]
-        public ActionResult Edit(int id)
+        public async Task<IActionResult> UpdateLocation(Guid id, LocationUpdateDto model)
         {
-            return Ok();
+            var result = await _locationService.EditLocation(id, model);
+            if (result.Success)
+            {
+                return NoContent();
+            }
+            return BadRequest();
         }
 
       
@@ -60,9 +105,14 @@ namespace HubLockerAPI.Controllers
         /// <returns></returns>
         [HttpDelete]
         [Route("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> DeleteLocation(Guid id)
         {
-            return Ok();
+            var result = await _locationService.DeleteLocation(id);
+            if (result.Success)
+            {
+                return NoContent();
+            }
+            return BadRequest();
         }
 
       

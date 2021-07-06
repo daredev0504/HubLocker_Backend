@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace HubLockerAPI.Models.DTOs
 {
-    public class LockerCreateDto
+    public class LocationReadDto
     {
-        [Required]
-        public string Name { get; set; }
-        public string Size { get; set; }
+        public Guid Id { get; set; }
+
+        public string City { get; set; } 
+
+        public string State { get; set; }
     }
 }

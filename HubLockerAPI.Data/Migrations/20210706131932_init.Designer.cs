@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HubLockerAPI.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210706023907_init")]
+    [Migration("20210706131932_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -99,30 +99,30 @@ namespace HubLockerAPI.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "cd12e8bf-4d3b-4d97-ba84-fd827e69def7",
+                            Id = "f547b782-d49b-4ffb-a08a-bb4a8207c920",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "17812553-1ed3-41d0-9dcd-10d0ca4f01e4",
+                            ConcurrencyStamp = "aded3ac6-ccb9-459a-92fa-bbc137e64148",
                             Country = "liberia",
                             EmailConfirmed = false,
                             FirstName = "Peter",
                             LastName = "Tosingh",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d0e1c082-c64f-4e16-bbfe-f059a245d2a6",
+                            SecurityStamp = "199e2119-90a3-4d82-a4f6-bc4092a98fcc",
                             TwoFactorEnabled = false
                         },
                         new
                         {
-                            Id = "0b801ba3-0102-41c1-8e37-3db50857d245",
+                            Id = "b9678728-3a8d-4da4-91e4-4afa07dba3f3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "455fa995-b154-4898-b6c7-ca544ceae8b3",
+                            ConcurrencyStamp = "ac04ad54-6613-46b3-9864-f2addc3142b6",
                             Country = "spain",
                             EmailConfirmed = false,
                             FirstName = "Beams",
                             LastName = "Bimbo",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "76ddfbf8-f847-49f4-b277-5d3a0b958256",
+                            SecurityStamp = "2528c314-e8dd-4b97-ab49-1631f1856272",
                             TwoFactorEnabled = false
                         });
                 });
@@ -175,6 +175,9 @@ namespace HubLockerAPI.Data.Migrations
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
+                    b.Property<string>("Size")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("LocationId");
@@ -186,25 +189,29 @@ namespace HubLockerAPI.Data.Migrations
                         {
                             Id = new Guid("580b289e-c1c8-4e00-814c-34195da42740"),
                             LocationId = new Guid("8d8f7441-0c40-4369-badf-ed3eca05b248"),
-                            Name = "Lekki locker 1"
+                            Name = "Lekki locker 1",
+                            Size = "small"
                         },
                         new
                         {
                             Id = new Guid("3d490a70-94ce-4d15-9494-5248280c2ce3"),
                             LocationId = new Guid("2c02c737-7e84-4e8c-ad23-b7afaac610be"),
-                            Name = "Ikeja locker 1"
+                            Name = "Ikeja locker 1",
+                            Size = "small"
                         },
                         new
                         {
                             Id = new Guid("b3fdcc9a-96bd-437b-b6fb-1de786c86d0d"),
                             LocationId = new Guid("8d8f7441-0c40-4369-badf-ed3eca05b248"),
-                            Name = "Lekki locker 2"
+                            Name = "Lekki locker 2",
+                            Size = "medium"
                         },
                         new
                         {
                             Id = new Guid("144b9ab9-61b3-4450-a74b-cc3f4c9acbc9"),
                             LocationId = new Guid("2c02c737-7e84-4e8c-ad23-b7afaac610be"),
-                            Name = "Ikeja locker 3"
+                            Name = "Ikeja locker 3",
+                            Size = "big"
                         });
                 });
 
@@ -237,15 +244,15 @@ namespace HubLockerAPI.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "70c7fa4e-dcf3-4e10-a94e-119a634e9550",
-                            ConcurrencyStamp = "f9962605-de3f-4fc9-bc0e-7359e419f6bb",
+                            Id = "bd20e864-1994-42ff-83f0-d2371c95a107",
+                            ConcurrencyStamp = "220e34ef-f3e6-402e-b6dd-3120f716a491",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
-                            Id = "ee99c959-311f-4242-a3f4-ce8a4527dde4",
-                            ConcurrencyStamp = "7f3d902d-50d7-4af2-83d6-d9b93e483ae2",
+                            Id = "2a9d5a54-4bc9-4426-b3ce-f3592b19f4f4",
+                            ConcurrencyStamp = "c0911403-3008-490a-ae26-d98cb5904df4",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });

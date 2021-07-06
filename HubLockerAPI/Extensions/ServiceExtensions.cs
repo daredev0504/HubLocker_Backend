@@ -90,6 +90,8 @@ namespace HubLockerAPI.Extensions
         }
         public static void ConfigureLockerService(this IServiceCollection services) => services.AddScoped<ILockerService, LockerService>();
         public static void ConfigureLockerRepo(this IServiceCollection services) => services.AddScoped<ILockerRepo, LockerRepo>();
+        public static void ConfigureLocationRepo(this IServiceCollection services) => services.AddScoped<ILocationRepo, LocationRepo>();
+        public static void ConfigureLocationService(this IServiceCollection services) => services.AddScoped<ILocationService, LocationService>();
 
     }
 }

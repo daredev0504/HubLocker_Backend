@@ -174,6 +174,7 @@ namespace HubLockerAPI.Data.Migrations
                 {
                     LockerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
+                    Size = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LocationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -192,8 +193,8 @@ namespace HubLockerAPI.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "70c7fa4e-dcf3-4e10-a94e-119a634e9550", "f9962605-de3f-4fc9-bc0e-7359e419f6bb", "Manager", "MANAGER" },
-                    { "ee99c959-311f-4242-a3f4-ce8a4527dde4", "7f3d902d-50d7-4af2-83d6-d9b93e483ae2", "Administrator", "ADMINISTRATOR" }
+                    { "bd20e864-1994-42ff-83f0-d2371c95a107", "220e34ef-f3e6-402e-b6dd-3120f716a491", "Manager", "MANAGER" },
+                    { "2a9d5a54-4bc9-4426-b3ce-f3592b19f4f4", "c0911403-3008-490a-ae26-d98cb5904df4", "Administrator", "ADMINISTRATOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -201,8 +202,8 @@ namespace HubLockerAPI.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Country", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "cd12e8bf-4d3b-4d97-ba84-fd827e69def7", 0, "17812553-1ed3-41d0-9dcd-10d0ca4f01e4", "liberia", null, false, "Peter", "Tosingh", false, null, null, null, null, null, false, "d0e1c082-c64f-4e16-bbfe-f059a245d2a6", false, null },
-                    { "0b801ba3-0102-41c1-8e37-3db50857d245", 0, "455fa995-b154-4898-b6c7-ca544ceae8b3", "spain", null, false, "Beams", "Bimbo", false, null, null, null, null, null, false, "76ddfbf8-f847-49f4-b277-5d3a0b958256", false, null }
+                    { "f547b782-d49b-4ffb-a08a-bb4a8207c920", 0, "aded3ac6-ccb9-459a-92fa-bbc137e64148", "liberia", null, false, "Peter", "Tosingh", false, null, null, null, null, null, false, "199e2119-90a3-4d82-a4f6-bc4092a98fcc", false, null },
+                    { "b9678728-3a8d-4da4-91e4-4afa07dba3f3", 0, "ac04ad54-6613-46b3-9864-f2addc3142b6", "spain", null, false, "Beams", "Bimbo", false, null, null, null, null, null, false, "2528c314-e8dd-4b97-ab49-1631f1856272", false, null }
                 });
 
             migrationBuilder.InsertData(
@@ -216,13 +217,13 @@ namespace HubLockerAPI.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Lockers",
-                columns: new[] { "LockerId", "LocationId", "Name" },
+                columns: new[] { "LockerId", "LocationId", "Name", "Size" },
                 values: new object[,]
                 {
-                    { new Guid("580b289e-c1c8-4e00-814c-34195da42740"), new Guid("8d8f7441-0c40-4369-badf-ed3eca05b248"), "Lekki locker 1" },
-                    { new Guid("b3fdcc9a-96bd-437b-b6fb-1de786c86d0d"), new Guid("8d8f7441-0c40-4369-badf-ed3eca05b248"), "Lekki locker 2" },
-                    { new Guid("3d490a70-94ce-4d15-9494-5248280c2ce3"), new Guid("2c02c737-7e84-4e8c-ad23-b7afaac610be"), "Ikeja locker 1" },
-                    { new Guid("144b9ab9-61b3-4450-a74b-cc3f4c9acbc9"), new Guid("2c02c737-7e84-4e8c-ad23-b7afaac610be"), "Ikeja locker 3" }
+                    { new Guid("580b289e-c1c8-4e00-814c-34195da42740"), new Guid("8d8f7441-0c40-4369-badf-ed3eca05b248"), "Lekki locker 1", "small" },
+                    { new Guid("b3fdcc9a-96bd-437b-b6fb-1de786c86d0d"), new Guid("8d8f7441-0c40-4369-badf-ed3eca05b248"), "Lekki locker 2", "medium" },
+                    { new Guid("3d490a70-94ce-4d15-9494-5248280c2ce3"), new Guid("2c02c737-7e84-4e8c-ad23-b7afaac610be"), "Ikeja locker 1", "small" },
+                    { new Guid("144b9ab9-61b3-4450-a74b-cc3f4c9acbc9"), new Guid("2c02c737-7e84-4e8c-ad23-b7afaac610be"), "Ikeja locker 3", "big" }
                 });
 
             migrationBuilder.CreateIndex(

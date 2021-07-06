@@ -11,10 +11,11 @@ namespace HubLockerAPI.Services.Interfaces
 {
     public interface ILockerService
     {
-        Task<Response<PagedList<LockerReadDto>>> GetLockersByPages(int pageNumber);
-        Task<Response<LockerReadDto>> RetrieveLockerById(string Id);
-        Task<Response<LockerReadDto>> AddLocker(LockerCreateDto model);
-        Task<Response<string>> EditLocker(string id, LockerUpdateDto model);
-        Task<Response<string>> DeleteLocker(string id);  
+        Task<Response<PagedList<LockerReadDto>>> GetLockersByPages(Guid locationId, LockerParameters lockerParameters);
+        Response<IEnumerable<LockerReadDto>> GetLockersByLocation(Guid locationId);
+        Task<Response<LockerReadDto>> RetrieveLockerById(Guid id);
+        Task<Response<LockerReadDto>> AddLocker(Guid locationId, LockerCreateDto model);
+        Task<Response<string>> EditLocker(Guid id, LockerUpdateDto model);
+        Task<Response<string>> DeleteLocker(Guid id);  
     }
 }

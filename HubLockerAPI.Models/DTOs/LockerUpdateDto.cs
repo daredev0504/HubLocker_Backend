@@ -8,6 +8,7 @@ namespace HubLockerAPI.Models.DTOs
 {
     public class LockerUpdateDto
     {
-        
+        public string Name { get; set; }
+        public string Size { get; set; }  
     }
 }

@@ -35,7 +35,9 @@ namespace HubLockerAPI
             services.ConfigureCors();
             services.ConfigureAddIdentity();
             services.ConfigureLockerService();
+            services.ConfigureLocationService();
             services.ConfigureLockerRepo();
+            services.ConfigureLocationRepo();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
