@@ -38,11 +38,27 @@ namespace HubLockerAPI.Services.Implementation
             response.Data = locationReadDto;
             return response;
         }
+        public async Task<Response<IEnumerable<LocationReadDto>>> GetAllLocationsWithLockersAsync(string searchTerm)
+        {
+            Response<IEnumerable<LocationReadDto>> response = new Response<IEnumerable<LocationReadDto>>();
+            var location = await _locationRepo.GetAllLocationsWithLockers(searchTerm);
+            if (!location.Any())
+            {
+                response.Success = false;
+                response.Message = "Location not found";
+                return response;
+            }
 
+            var locationReadDto = _mapper.Map<IEnumerable<LocationReadDto>>(location);
+            response.Success = true;
+            response.Message = "Locations and lockers found";
+            response.Data = locationReadDto;
+            return response;
+        }
         public async Task<Response<LocationReadDto>> RetrieveLocationById(Guid id)
         {
             Response<LocationReadDto> response = new Response<LocationReadDto>();
-            var location = await _locationRepo.GetById(id);
+            var location = await _locationRepo.GetLocationById(id);
             if (location == null)
             {
                 response.Message = "Location not found";

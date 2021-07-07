@@ -2,7 +2,7 @@
 using HubLockerAPI.Models.DTOs;
 using HubLockerAPI.Models.Entities;
 
-namespace Commander.API.Profiles
+namespace HubLockerAPI.Profiles
 {
     /// <summary>
     /// 

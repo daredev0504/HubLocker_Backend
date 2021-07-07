@@ -19,6 +19,6 @@ namespace HubLockerAPI.Models.Entities
         public string State { get; set; }
 
         // Navigational Properties
-        private ICollection<Locker> Lockers { get; set; } = new List<Locker>();
+        public ICollection<Locker> Lockers { get; set; } = new List<Locker>();
     }
 }

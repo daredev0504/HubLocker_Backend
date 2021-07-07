@@ -15,6 +15,7 @@ namespace HubLockerAPI.Services.Interfaces
         Task<Response<LocationReadDto>> RetrieveLocationById(Guid id);
         Task<Response<LocationReadDto>> AddLocation(LocationCreateDto model);
         Task<Response<string>> EditLocation(Guid id, LocationUpdateDto model);
-        Task<Response<string>> DeleteLocation(Guid id);  
+        Task<Response<string>> DeleteLocation(Guid id);
+        Task<Response<IEnumerable<LocationReadDto>>> GetAllLocationsWithLockersAsync(string searchTerm);
     }
 }

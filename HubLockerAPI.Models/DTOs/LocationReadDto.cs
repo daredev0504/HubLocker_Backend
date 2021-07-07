@@ -14,5 +14,7 @@ namespace HubLockerAPI.Models.DTOs
         public string City { get; set; } 
 
         public string State { get; set; }
+        public ICollection<LockerReadDto> Lockers { get; set; }
+
     }
 }

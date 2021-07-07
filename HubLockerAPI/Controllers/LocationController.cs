@@ -43,6 +43,22 @@ namespace HubLockerAPI.Controllers
             return BadRequest();
         }
         
+        /// <summary>
+        /// returns all loccations with their respective lockers
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("withlockers")]
+        public async Task<IActionResult> GetLocationsWithLockers([FromQuery]string searchTerm)
+        {
+            var result = await _locationService.GetAllLocationsWithLockersAsync(searchTerm);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest();
+        }
 
         /// <summary>
         /// Gets a Location by Id
@@ -72,7 +88,7 @@ namespace HubLockerAPI.Controllers
             var result = await _locationService.AddLocation(model);
             if (result.Success)
             {
-                return CreatedAtRoute("GetLocationById", new {Id = result.Data.Id}, result.Data);
+                return CreatedAtRoute("GetLocationById", new {id = result.Data.Id}, result.Data);
             }
 
             return BadRequest();

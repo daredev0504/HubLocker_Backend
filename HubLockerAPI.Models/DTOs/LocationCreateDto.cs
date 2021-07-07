@@ -15,5 +15,6 @@ namespace HubLockerAPI.Models.DTOs
 
         [Required(ErrorMessage = "State name is a required field.")]
         public string State { get; set; }
+        public IEnumerable<LockerCreateDto> Lockers { get; set; } = new List<LockerCreateDto>();
     }
 }

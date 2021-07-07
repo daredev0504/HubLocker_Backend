@@ -32,7 +32,10 @@ namespace HubLockerAPI
             services.ConfigureSwagger();
             services.ConfigureIdentityPassword();
             services.ConfigureDbContext(Configuration);
-            services.ConfigureCors();
+            services.AddCors(c =>  
+            {  
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());  
+            }); 
             services.ConfigureAddIdentity();
             services.ConfigureLockerService();
             services.ConfigureLocationService();
@@ -54,6 +57,7 @@ namespace HubLockerAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors(options => options.AllowAnyOrigin());
 
             app.UseAuthentication();
             app.UseAuthorization();

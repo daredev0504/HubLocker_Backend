@@ -32,6 +32,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:HubLockerAPI.Controllers.LocationController.GetLocationsWithLockers(System.String)">
+            <summary>
+            returns all loccations with their respective lockers
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:HubLockerAPI.Controllers.LocationController.GetLocationById(System.Guid)">
             <summary>
             Gets a Location by Id
@@ -107,12 +113,12 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="T:Commander.API.Profiles.MappingProfile">
+        <member name="T:HubLockerAPI.Profiles.MappingProfile">
             <summary>
             
             </summary>
         </member>
-        <member name="M:Commander.API.Profiles.MappingProfile.#ctor">
+        <member name="M:HubLockerAPI.Profiles.MappingProfile.#ctor">
             <summary>
             
             </summary>

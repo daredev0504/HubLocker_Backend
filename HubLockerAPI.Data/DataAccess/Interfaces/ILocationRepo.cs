@@ -9,6 +9,7 @@ namespace HubLockerAPI.Data.DataAccess.Interfaces
 {
     public interface ILocationRepo : IGenericRepository<Location>
     {
-        
+        Task<Location> GetLocationById(Guid locationId);
+        Task<IEnumerable<Location>> GetAllLocationsWithLockers(string searchTerm);
     }
 }
