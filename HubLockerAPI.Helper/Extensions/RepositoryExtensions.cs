@@ -13,7 +13,7 @@ namespace HubLockerAPI.Helper.Extensions
         public static IQueryable<Location> Search(this IQueryable<Location> locations, string searchTerm)
         {
             if (string.IsNullOrWhiteSpace(searchTerm))
-                return locations;
+                return null;
             var lowerCaseTerm = searchTerm.Trim()
                 .ToLower();
             return locations.Where(e => e.City.ToLower().Contains(lowerCaseTerm) || e.State.ToLower().Contains(lowerCaseTerm));

@@ -57,7 +57,7 @@ namespace HubLockerAPI.Controllers
                 return Ok(result);
             }
 
-            return BadRequest();
+            return BadRequest(result);
         }
 
         /// <summary>
